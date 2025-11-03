@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from tensorflow.keras.models import load_model
 
-model = load_model('facial_emotion_model.h5')
+model = load_model('facial_emotion_model_02.h5')
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 

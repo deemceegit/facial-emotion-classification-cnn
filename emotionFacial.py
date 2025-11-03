@@ -47,9 +47,9 @@ model.compile(optimizer='adam',
 history = model.fit(
     train_ds,
     validation_data=val_ds,
-    epochs=15
+    epochs=30
 )
 
 
-model.save("facial_emotion_model.h5")
-print("\n Model trained sucessfully!!!")
+model.save("facial_emotion_model_02.h5")
+print("\n Facial emotion model trained sucessfully!!!")
