@@ -2,8 +2,8 @@ from tensorflow.keras.models import load_model
 import tensorflow as tf
 import numpy as np
 
-model = load_model("facial_emotion_model_02.h5")
-print("model loaded sucessfully!!!")
+model = load_model("facial_emotion_model_best.h5")
+print("done load model")
 
 # print structure
 print("start print structure")
@@ -14,7 +14,7 @@ from tensorflow.keras.utils import load_img, img_to_array
 
 IMG_SIZE = (128, 128)
 
-img_path = "randomImgTest/test_surprise.png"
+img_path = "dataset/test/sad/im1.png"
 
 img = load_img(img_path, target_size=IMG_SIZE)  # same szie w model
 img_array = img_to_array(img) / 255.0           # normalize [0,1]

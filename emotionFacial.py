@@ -23,7 +23,15 @@ train_ds = train_ds.map(lambda x, y: (x/255.0, y))
 val_ds = val_ds.map(lambda x, y: (x/255.0, y))
 
 
+data_augmentation = models.Sequential([
+    layers.RandomFlip("horizontal"),
+    layers.RandomRotation(0.1),
+    layers.RandomZoom(0.1)      
+])
+
 model = models.Sequential([
+    data_augmentation,
+
     layers.Conv2D(32, (3,3), activation='relu', input_shape=(128,128,3)),
     layers.MaxPooling2D(2,2),
 
@@ -50,6 +58,5 @@ history = model.fit(
     epochs=30
 )
 
-
-model.save("facial_emotion_model_02.h5")
-print("\n Facial emotion model trained sucessfully!!!")
+model.save("facial_emotion_model_best.h5")
+print("!training done!")
